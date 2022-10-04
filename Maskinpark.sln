@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maskinpark", "Maskinpark\Maskinpark.csproj", "{52303CDE-C55B-4E81-913C-51954C39A576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maskinpark", "Maskinpark\Maskinpark.csproj", "{52303CDE-C55B-4E81-913C-51954C39A576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maskinpark.Shared", "Mskinpark.Shared\Maskinpark.Shared.csproj", "{A6D25E6A-B8BB-4CB8-996D-6FF0ECC680AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maskinpark.Shared", "Mskinpark.Shared\Maskinpark.Shared.csproj", "{A6D25E6A-B8BB-4CB8-996D-6FF0ECC680AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

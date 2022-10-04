@@ -1,24 +1,28 @@
-﻿
-
-using Maskinpark.Shared;
+﻿using Maskinpark.Shared;
+using Microsoft.AspNetCore.Components;
 
 namespace Maskinpark.Pages
 {
-	public partial class MaskinOverview
+    public partial class MaskinDetails
 	{
-		public IEnumerable<Maskin> Maskiner { get; set; } = new List<Maskin>();	
+        [Parameter]
+		public string MaskinId { get; set; }
+		public	Maskin Maskin { get; set; }= new Maskin();
+
+		public IEnumerable<Maskin> Maskiner { get; set; } = new List<Maskin>();
 		public List<Verkstad> Verksteder { get; set; } = new List<Verkstad>();
 		private List<Kategori> Kategorier { get; set; } = new List<Kategori>();
 
-        protected override Task OnInitializedAsync()
-        {
-            InitMaskin();
-            InitKategori();
-            InitVerkstad();
+		protected override Task OnInitializedAsync()
+		{
+			InitMaskin();
+			InitKategori();
+			InitVerkstad();
+			Maskin = Maskiner.FirstOrDefault(m => m.MaskinId == int.Parse(MaskinId));
 
-            return base.OnInitializedAsync();
-        }
-        private void InitKategori()
+			return base.OnInitializedAsync();
+		}
+		private void InitKategori()
 		{
 			Kategorier = new List<Kategori>()
 			{
@@ -31,7 +35,7 @@ namespace Maskinpark.Pages
 		}
 		private void InitVerkstad()
 		{
-			Verksteder = new List<Verkstad>
+			Verksteder = new List<Verkstad>()
 			{
 				new Verkstad { VerkstadId = 1, VerkstadNamn = "BLG22" },
 				new Verkstad { VerkstadId = 2, VerkstadNamn = "NOK33" },
@@ -65,8 +69,9 @@ namespace Maskinpark.Pages
 			};
 
 			Maskiner = new List<Maskin> { m1, m2 };
-		
+
 		}
 	}
 }
+
 
