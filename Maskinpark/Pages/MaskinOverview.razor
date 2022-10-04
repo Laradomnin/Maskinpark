@@ -1,5 +1,38 @@
-﻿@page "/maskinoverview"
+﻿@page "/"
 
-@code {
+@*<h1>Hej</h1>*@
 
-}
+<h1 class="page-title">Alla maskiner</h1>
+
+@if (Maskiner == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+        else
+    {
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Maskin Id</th>
+                <th>Maskinnamn</th>
+                <th>Maskinmärke</th>
+            </tr>
+        </thead>
+      <tbody>
+            @foreach (var maskin in Maskiner)
+            {
+                <tr>
+                    
+                    <td>@maskin.MaskinId</td>
+                    <td>@maskin.Namn</td>
+                    <td>@maskin.Märke</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+
+    
+
+

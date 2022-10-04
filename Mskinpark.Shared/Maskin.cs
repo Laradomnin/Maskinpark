@@ -13,6 +13,7 @@ namespace Maskinpark.Shared
    
         public int KategoriId { get; set; }
         public Kategori Kategori { get; set; }
+        public Status Status { get; set; }
 
     }
 }
